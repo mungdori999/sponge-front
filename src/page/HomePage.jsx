@@ -8,7 +8,7 @@ import PostList from "../component/Home/PostList";
 import PostBanner from "../component/Home/PostBanner";
 import Bottom from "../component/Bottom/Bottom";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <Header
@@ -25,4 +25,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
