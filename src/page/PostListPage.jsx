@@ -1,4 +1,3 @@
-import Brand from "../component/Header/Brand";
 import Header from "../component/Header/Header";
 import LoginButton from "../component/Header/LoginButton";
 
@@ -7,7 +6,7 @@ const PostListPage = () => {
   return (
     <div>
       <Header
-        leftchild={<Brand />}
+        leftchild={<div className="post-list">진단사례</div>}
         rightchild={<LoginButton text={"로그인/가입"} />}
       />
       <Bottom />
