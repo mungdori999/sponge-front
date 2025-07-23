@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("/Pretendard-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/Pretendard-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0px;
+  width: 100%;
+  background-color: rgb(246, 246, 246);
+  display: flex;
+}
+#root {
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+  box-shadow: rgb(100, 100, 100, 0.2) 0px 0px 29px 0px;
+  padding: 0px 20px;
+}
+
+body * {
+  font-family: "Pretendard";
+}

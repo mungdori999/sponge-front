@@ -1,0 +1,36 @@
+.Search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1.5px solid #ffb317;
+  border-radius: 20px 20px 20px 20px;
+  margin: 10px 20px;
+}
+
+.Search input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+
+  font-size: 16px;
+}
+.Search input:focus {
+  outline: none;
+}
+
+.Search .search-button {
+  background-color: transparent; /* 하얀 배경 제거 */
+  border: none;
+  cursor: pointer;
+  color: #ffb317;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+}
+
+.Search input::placeholder {
+  color: #9f9f9f; /* 연한 회색 플레이스홀더 */
+}

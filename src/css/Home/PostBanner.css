@@ -1,0 +1,13 @@
+.PostBanner > button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 1000;
+  cursor: pointer;
+}
+
+.PostBanner {
+  padding-top: 15px;
+}
