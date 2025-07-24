@@ -3,6 +3,7 @@ import HomePage from "./page/HomePage.jsx";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import PostListPage from "./page/PostListPage.jsx";
 import { useState, createContext } from "react";
+import LoginPage from "./page/LoginPage.jsx";
 export const TabContext = createContext();
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/post" element={<PostListPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </TabContext.Provider>
     </div>
