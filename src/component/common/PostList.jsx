@@ -1,5 +1,5 @@
 import "../../css/Home/PostList.css";
-import PostPrev from "./PostPrev";
+import PostPrev from "../Home/PostPrev";
 
 const PostList = () => {
   return (

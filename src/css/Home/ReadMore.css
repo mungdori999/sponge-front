@@ -1,0 +1,34 @@
+.ReadMore {
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 버튼을 가운데 정렬 */
+}
+
+.ReadMore > .ReadMore_btn {
+  margin-top: 30px;
+  font-size: 17px;
+  cursor: pointer;
+
+  padding: 10px 20px;
+  width: 70%;
+  max-width: 300px;
+
+  background-color: white;
+  color: #9f9f9f;
+
+  border: none;
+  border-radius: 10px; /* 약간 둥글게 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  transition: background-color 0.3s;
+}
+
+.ReadMore > .ReadMore_btn:hover {
+  background-color: #e0e0e0;
+}
+
+.ReadMore .plus {
+  font-size: 25px;
+  color: #ffb317;
+}
