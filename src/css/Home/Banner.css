@@ -5,7 +5,7 @@
   padding-left: 20px;
   padding-bottom: 50px;
 }
-.Banner .Banner_text {
+.Banner .Banner-text {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -18,10 +18,10 @@
 
   margin: 0.5rem 0;
 }
-.Banner .Banner_button {
+.Banner .Banner-button {
   margin-top: 20px;
 }
-.Banner .Banner_button > button {
+.Banner .Banner-button > button {
   background-color: #3f3e3b;
   color: white;
   border: none;

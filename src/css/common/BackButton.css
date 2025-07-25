@@ -1,0 +1,6 @@
+.BackButton {
+  border: none;
+  background: none;
+  cursor: pointer; /* 커서 손가락 모양으로 */
+  font-size: 20px; /* 필요에 따라 추가 조정 가능 */
+}

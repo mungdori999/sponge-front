@@ -3,9 +3,9 @@ import "../../css/Header/Header.css";
 const Header = ({ leftchild, title, rightchild }) => {
   return (
     <header className="Header">
-      <div className="header_left">{leftchild}</div>
-      <div className="header_center">{title}</div>
-      <div className="header_right">{rightchild}</div>
+      <div className="header-left">{leftchild}</div>
+      <div className="header-center">{title}</div>
+      <div className="header-right">{rightchild}</div>
     </header>
   );
 };

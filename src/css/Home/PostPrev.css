@@ -9,12 +9,12 @@
   cursor: pointer;
 }
 
-.PostPrev .tag_container {
+.PostPrev .tag-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.PostPrev .tag_container .tag {
+.PostPrev .tag-container .tag {
   background-color: #fff6e3;
   color: #ffb317;
   padding: 5px 10px;
@@ -34,28 +34,28 @@
   margin-bottom: 10px;
 }
 
-.PostPrev .post_info {
+.PostPrev .post-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
 }
-.post_info .info {
+.post-info .info {
   display: flex;
   flex-direction: row;
   gap: 15px;
 }
-.post_info .info .answer {
+.post-info .info .answer {
   color: #ffb317;
   display: flex;
   align-items: center;
 }
-.post_info .info .like {
+.post-info .info .like {
   color: #9f9f9f;
   display: flex;
   align-items: center;
 }
-.post_info .date {
+.post-info .date {
   color: #9f9f9f;
 }
 

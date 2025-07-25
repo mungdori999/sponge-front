@@ -5,7 +5,7 @@
   align-items: center; /* 버튼을 가운데 정렬 */
 }
 
-.ReadMore > .ReadMore_btn {
+.ReadMore > .ReadMore-btn {
   margin-top: 30px;
   font-size: 17px;
   cursor: pointer;
@@ -24,7 +24,7 @@
   transition: background-color 0.3s;
 }
 
-.ReadMore > .ReadMore_btn:hover {
+.ReadMore > .ReadMore-btn:hover {
   background-color: #e0e0e0;
 }
 

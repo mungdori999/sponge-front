@@ -2,7 +2,7 @@ import "../../css/Home/ReadMore.css";
 const ReadMore = ({ text, onClick }) => {
   return (
     <div className="ReadMore">
-      <button className="ReadMore_btn" onClick={onClick}>
+      <button className="ReadMore-btn" onClick={onClick}>
         {text} <span className="plus">+</span>
       </button>
     </div>

@@ -6,7 +6,7 @@ const PostCategory = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   return (
     <div className="PostCategory">
-      <div className="post_category">
+      <div className="post-category">
         <div className="scroll-container">
           {items.map((item, i) => (
             <div

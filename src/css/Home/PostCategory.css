@@ -1,5 +1,5 @@
 /* HorizontalScroll.css */
-.PostCategory .post_category .scroll-container {
+.PostCategory .post-category .scroll-container {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -11,7 +11,7 @@
   scrollbar-width: none; /* Firefox */
 }
 
-.PostCategory .post_category .scroll-item {
+.PostCategory .post-category .scroll-item {
   flex: 0 0 auto;
   width: 80px;
   height: auto;
@@ -25,7 +25,7 @@
   cursor: pointer;
 }
 
-.PostCategory .post_category .scroll-container .selected {
+.PostCategory .post-category .scroll-container .selected {
   color: #ffb317;
   border-bottom: #ffb317 2px solid;
 }

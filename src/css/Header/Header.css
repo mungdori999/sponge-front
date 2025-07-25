@@ -10,16 +10,16 @@
   display: flex;
 }
 
-.Header .header_center {
+.Header .header-center {
   width: 50%;
   font-size: 25px;
   justify-content: center;
 }
-.Header .header_left {
+.Header .header-left {
   width: 25%;
   justify-content: flex-start;
 }
-.Header .header_right {
+.Header .header-right {
   width: 25%;
   justify-content: flex-end;
 }

@@ -8,13 +8,13 @@
   color: black;
   padding-bottom: 20px;
 }
-.PostListBanner > .PostListBanner_text {
+.PostListBanner > .PostListBanner-text {
   font-size: 15px;
 
   margin-bottom: 15px;
 }
 
-.PostListBanner > .PostListBanner_btn {
+.PostListBanner > .PostListBanner-btn {
   padding-top: 15px;
   font-size: 17px;
   font-weight: bold;
