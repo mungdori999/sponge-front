@@ -11,6 +11,7 @@ import ReadMore from "../component/common/ReadMore";
 import { TabContext } from "../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import routerUrl from "../data/router-url";
 
 const HomePage = () => {
   const { activeTab, handleTabClick } = useContext(TabContext);
@@ -20,7 +21,10 @@ const HomePage = () => {
       <Header
         leftchild={<Brand />}
         rightchild={
-          <LoginButton text={"로그인/가입"} onClick={() => nav("/login")} />
+          <LoginButton
+            text={"로그인/가입"}
+            onClick={() => nav(routerUrl.login)}
+          />
         }
       />
       <Search />

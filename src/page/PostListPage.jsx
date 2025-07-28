@@ -1,16 +1,23 @@
 import Header from "../component/Header/Header";
 import LoginButton from "../component/Header/LoginButton";
-
+import { useNavigate } from "react-router-dom";
 import Bottom from "../component/Bottom/Bottom";
 import PostListBanner from "../component/PostList/PostListBanner";
 import PostCategory from "../component/common/PostCategory";
 import PostList from "../component/common/PostList";
+import routerUrl from "../data/router-url";
 const PostListPage = () => {
+  const nav = useNavigate();
   return (
     <div>
       <Header
         leftchild={<div className="post-list">진단사례</div>}
-        rightchild={<LoginButton text={"로그인/가입"} />}
+        rightchild={
+          <LoginButton
+            text={"로그인/가입"}
+            onClick={() => nav(routerUrl.login)}
+          />
+        }
       />
       <PostListBanner />
       <PostCategory />

@@ -1,8 +1,8 @@
 import "../../css/Login/LoginBox.css";
 
-const LoginBox = ({ title, text1, text2, img }) => {
+const LoginBox = ({ title, text1, text2, img, onClick }) => {
   return (
-    <div className="LoginBox">
+    <div className="LoginBox" onClick={onClick}>
       <div className="login-text">
         <div className="login-title">{title}</div>
         <div className="login-description">

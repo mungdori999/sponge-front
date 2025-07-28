@@ -17,12 +17,14 @@ const LoginPage = () => {
           text1={"문제행동 작성하고 "}
           text2={"훈련사에게 상담받기"}
           img={loginImg1}
+          onClick={() => {}}
         />
         <LoginBox
           title={"훈련사로 로그인하기"}
           text1={"문제행동 진단하고 "}
           text2={"더 많은 사람에게 홍보하기"}
           img={loginImg2}
+          onClick={() => {}}
         />
       </div>
     </div>
