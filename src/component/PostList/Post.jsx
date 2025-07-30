@@ -1,0 +1,36 @@
+import "../../css/PostList/Post.css";
+import petImg from "../../assets/basic_pet.png";
+
+const Post = ({ post, pet }) => {
+  return (
+    <div className="Post">
+      <div className="post-header">
+        <div className="category-container">
+          {post.postCategoryList.map((item, index) => (
+            <div key={index} className="post-category">
+              # {item}
+            </div>
+          ))}
+        </div>
+        <div className="title">{post.title}</div>
+        <div className="pet-container">
+          <div className="pet-info">
+            <div className="pet-image">
+              <img src={petImg} />
+            </div>
+            <div className="pet-details">
+              <div className="pet-name">{pet.name}</div>
+              <div className="pet-description">
+                {pet.breed} {pet.gender} {pet.weight}kg, {pet.age}
+              </div>
+            </div>
+          </div>
+          <div className="post-created">6시간전</div>
+        </div>
+        <div className="post-content">{post.content}</div>
+      </div>
+    </div>
+  );
+};
+
+export default Post;

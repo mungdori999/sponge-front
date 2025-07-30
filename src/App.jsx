@@ -1,15 +1,18 @@
 import "./App.css";
 import HomePage from "./page/HomePage.jsx";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import PostListPage from "./page/PostListPage.jsx";
 import { useState, createContext } from "react";
 import LoginPage from "./page/LoginPage.jsx";
 import PostPage from "./page/PostPage.jsx";
 import routerUrl from "./data/router-url.js";
+import { useEffect } from "react";
 export const TabContext = createContext();
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);
+
+  const location = useLocation();
 
   const navigate = useNavigate();
   const handleTabClick = (index) => {
@@ -35,6 +38,28 @@ function App() {
         navigate(routerUrl.home);
     }
   };
+  // 뒤로가기를 클릭했을 시
+  useEffect(() => {
+    switch (location.pathname) {
+      case routerUrl.home:
+        setActiveTab(0);
+        break;
+      case routerUrl.postList:
+        setActiveTab(1);
+        break;
+      case routerUrl.myPost:
+        setActiveTab(2);
+        break;
+      case routerUrl.chat:
+        setActiveTab(3);
+        break;
+      case routerUrl.myPage:
+        setActiveTab(4);
+        break;
+      default:
+        break;
+    }
+  }, [location.pathname]);
   return (
     <div>
       <TabContext.Provider value={{ activeTab, handleTabClick }}>

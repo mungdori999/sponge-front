@@ -1,0 +1,68 @@
+.Post {
+  padding-top: 20px;
+}
+
+.Post .category-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.Post .category-container .post-category {
+  background-color: #fff6e3;
+  color: #ffb317;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.Post .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  margin: 10px 0;
+}
+
+.Post .pet-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.Post .pet-container .pet-info {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.Post .pet-container .pet-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.Post .pet-container .pet-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Post .pet-container .pet-details .pet-name {
+  font-size: 16px;
+
+  color: black;
+}
+.Post .pet-container .pet-details .pet-description {
+  font-size: 12px;
+  color: #9f9f9f;
+}
+
+.Post .post-created {
+  font-size: 12px;
+  color: #9f9f9f;
+  margin-top: 30px;
+}
+
+.Post .post-content {
+  font-size: 16px;
+  color: #545454;
+  margin-top: 20px;
+}
