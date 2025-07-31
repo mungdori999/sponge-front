@@ -60,9 +60,59 @@
   color: #9f9f9f;
   margin-top: 30px;
 }
-
-.Post .post-content {
+.Post .post-body {
+  margin-top: 20px;
+  min-height: 250px;
+}
+.Post .post-body .post-content {
   font-size: 16px;
   color: #545454;
+}
+.Post .post-bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 20px;
+}
+.Post .post-bottom .tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 20px;
+  font-size: 14px;
+  color: #ffb317;
+}
+.Post .post-bottom .post-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.Post .post-bottom .post-actions .action-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #9f9f9f;
+  cursor: pointer;
+}
+
+.Post .post-bottom .post-actions .icon {
+  color: #9f9f9f;
+  font-size: 16px;
+}
+
+.Post .post-bottom .post-actions .action-button:hover {
+  background-color: white;
+  color: #ffb317;
+  border-color: #ffb317;
+}
+
+.Post .post-bottom .post-actions .action-button:hover .icon {
+  color: #ffb317;
 }

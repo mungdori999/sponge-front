@@ -1,5 +1,6 @@
 import "../../css/PostList/Post.css";
 import petImg from "../../assets/basic_pet.png";
+import { FaBookmark, FaThumbsUp } from "react-icons/fa";
 
 const Post = ({ post, pet }) => {
   return (
@@ -27,7 +28,29 @@ const Post = ({ post, pet }) => {
           </div>
           <div className="post-created">6시간전</div>
         </div>
+      </div>
+      <div className="post-body">
         <div className="post-content">{post.content}</div>
+      </div>
+
+      <div className="post-bottom">
+        <div className="tag-container">
+          {post.tagList.map((item, index) => (
+            <div key={index} className="post-tag">
+              # {item}
+            </div>
+          ))}
+        </div>
+        <div className="post-actions">
+          <button className="like-button action-button">
+            <FaThumbsUp className="icon" />
+            12
+          </button>
+          <button className="bookmark-button action-button">
+            <FaBookmark className="icon" />
+            저장
+          </button>
+        </div>
       </div>
     </div>
   );
