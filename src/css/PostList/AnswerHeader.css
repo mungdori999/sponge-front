@@ -1,0 +1,30 @@
+.AnswerHeader {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  color: black;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.AnswerHeader .answer-count {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.AnswerHeader .answer-button {
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: #9f9f9f;
+}
+
+.AnswerHeader .answer-button div {
+  cursor: pointer;
+}
+
+.AnswerHeader .answer-button .active {
+  color: black;
+  font-weight: bold;
+}

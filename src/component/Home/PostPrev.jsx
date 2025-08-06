@@ -1,6 +1,7 @@
 import "../../css/Home/PostPrev.css";
 import { FaCommentDots, FaThumbsUp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import routerUrl from "../../data/router-url.js";
 
 const PostPrev = () => {
   const nav = useNavigate();

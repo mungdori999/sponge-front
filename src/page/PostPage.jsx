@@ -4,8 +4,8 @@ import routerUrl from "../data/router-url";
 import BackButton from "../component/common/BackButton";
 import LoginButton from "../component/Header/LoginButton";
 import Post from "../component/PostList/Post";
-import { BsGenderAmbiguous } from "react-icons/bs";
-import { b } from "framer-motion/client";
+import Answer from "../component/PostList/Answer";
+import AnswerHeader from "../component/PostList/AnswerHeader";
 
 const PostPage = () => {
   const nav = useNavigate();
@@ -36,6 +36,8 @@ const PostPage = () => {
         }
       />
       <Post post={post} pet={pet} />
+      <AnswerHeader />
+      <Answer />
     </div>
   );
 };

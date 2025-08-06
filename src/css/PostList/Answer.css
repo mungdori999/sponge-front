@@ -1,0 +1,13 @@
+.Answer {
+  padding-bottom: 50px;
+}
+.Answer .answer-trainer {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.Answer .trainer-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
