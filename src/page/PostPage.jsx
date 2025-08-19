@@ -24,6 +24,16 @@ const PostPage = () => {
     weight: "5",
     age: "3살",
   };
+  const trainer = {
+    name: "강훈련",
+    adoptCount: 54,
+    chatCount: 12,
+  };
+  const answer = {
+    content:
+      "안녕하세요! 강아지가 외출 시 짖는 문제는 흔한 현상입니다. 이 문제를 해결하기 위해서는 몇 가지 방법이 있습니다. 우선, 강아지가 불안해하지 않도록 집에서 편안한 환경을 만들어주는 것이 중요합니다. 또한, 외출 전에 충분한 운동을 시켜주면 도움이 될 수 있습니다. 훈련사와 상담하여 구체적인 훈련 방법을 배우는 것도 좋은 방법입니다.",
+    likeCount: 12,
+  };
   return (
     <div className="PostPage">
       <Header
@@ -37,7 +47,7 @@ const PostPage = () => {
       />
       <Post post={post} pet={pet} />
       <AnswerHeader />
-      <Answer />
+      <Answer trainer={trainer} answer={answer} />
     </div>
   );
 };

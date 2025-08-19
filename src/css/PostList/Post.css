@@ -69,6 +69,7 @@
 .Post .post-body .post-content {
   font-size: 16px;
   color: #545454;
+  line-height: 1.5;
 }
 .Post .post-bottom {
   display: flex;
