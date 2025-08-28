@@ -6,6 +6,7 @@ import { useState, createContext } from "react";
 import LoginPage from "./page/LoginPage.jsx";
 import PostPage from "./page/PostPage.jsx";
 import routerUrl from "./data/router-url.js";
+import MyPage from "./page/MyPage.jsx";
 import { useEffect } from "react";
 export const TabContext = createContext();
 
@@ -68,6 +69,7 @@ function App() {
           <Route path={routerUrl.postList} element={<PostListPage />} />
           <Route path={routerUrl.post} element={<PostPage />} />
           <Route path={routerUrl.login} element={<LoginPage />} />
+          <Route path={routerUrl.myPage} element={<MyPage />} />
         </Routes>
       </TabContext.Provider>
     </div>

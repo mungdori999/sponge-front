@@ -1,0 +1,11 @@
+.MyPage .edit-profile {
+  display: flex;
+  align-items: center; /* 세로 가운데 정렬 */
+  gap: 5px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.MyPage .edit-profile p {
+  font-size: 14px;
+}
