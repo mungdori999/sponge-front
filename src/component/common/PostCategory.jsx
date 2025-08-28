@@ -1,9 +1,7 @@
 import "../../css/Home/PostCategory.css";
-import { useState } from "react";
 import { postCategory } from "../../data/category";
-const PostCategory = () => {
+const PostCategory = ({ selectedIndex, onSelect }) => {
   const items = postCategory;
-  const [selectedIndex, setSelectedIndex] = useState(0);
   return (
     <div className="PostCategory">
       <div className="post-category">
@@ -12,7 +10,7 @@ const PostCategory = () => {
             <div
               key={i}
               className={`scroll-item ${selectedIndex === i ? "selected" : ""}`}
-              onClick={() => setSelectedIndex(i)}
+              onClick={() => onSelect(i)}
             >
               {item}
             </div>

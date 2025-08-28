@@ -6,8 +6,13 @@ import PostListBanner from "../component/PostList/PostListBanner";
 import PostCategory from "../component/common/PostCategory";
 import PostList from "../component/common/PostList";
 import routerUrl from "../data/router-url";
+import { useCategorySelect } from "../component/hook/categorySelect";
+
 const PostListPage = () => {
   const nav = useNavigate();
+
+  const { selectedIndex, handleCategorySelect } = useCategorySelect();
+
   return (
     <div>
       <Header
@@ -20,7 +25,10 @@ const PostListPage = () => {
         }
       />
       <PostListBanner />
-      <PostCategory />
+      <PostCategory
+        selectedIndex={selectedIndex}
+        onSelect={handleCategorySelect}
+      />
       <PostList />
       <Bottom />
     </div>
