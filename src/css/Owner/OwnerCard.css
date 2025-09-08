@@ -2,6 +2,32 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.OwnerCard .pet-container {
+  display: flex;
+  justify-content: space-around; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 20px; /* 박스 사이 간격 */
+  margin-top: 20px;
+}
+.OwnerCard .pet-container button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffb317;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.OwnerCard .pet-container button:hover {
+  background-color: #ffbb30;
+  transform: translateY(-2px);
+}
+
 .OwnerCard .owner-info .name {
   margin-top: 40px;
   font-size: 20px;
@@ -66,4 +92,39 @@
 .OwnerCard .pet-info-container .pet-info {
   font-size: 16px;
   color: black;
+}
+
+.slide {
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.OwnerCard .page-dot {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 6px;
+}
+
+.OwnerCard .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.OwnerCard .dot.active {
+  background-color: #ffbb30; /* 현재 선택된 dot → 노란색 */
 }

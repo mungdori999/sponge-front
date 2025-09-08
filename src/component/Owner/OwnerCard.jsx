@@ -1,7 +1,44 @@
 import petImg from "../../assets/basic_pet.png";
 import "../../css/Owner/OwnerCard.css";
+import { useState } from "react";
+import PetInfo from "./PetInfo";
+
+const pets = [
+  {
+    name: "뭉도리",
+    breed: "푸들",
+    gender: "수컷",
+    weight: "3kg",
+    img: petImg,
+  },
+  {
+    name: "초코",
+    breed: "시바견",
+    gender: "암컷",
+    weight: "6kg",
+    img: petImg,
+  },
+  {
+    name: "보리",
+    breed: "말티즈",
+    gender: "수컷",
+    weight: "4kg",
+    img: petImg,
+  },
+];
 
 const OwnerCard = () => {
+  const [index, setIndex] = useState(0);
+
+  const handlePrev = () => {
+    setIndex((prev) => (prev - 1 + pets.length) % pets.length);
+  };
+
+  const handleNext = () => {
+    setIndex((prev) => (prev + 1) % pets.length);
+  };
+  const pet = pets[index];
+
   return (
     <div className="OwnerCard">
       <div className="owner-info">
@@ -10,26 +47,21 @@ const OwnerCard = () => {
         </p>
         <p>안녕하세요</p>
       </div>
-      <div class="pet-box">
-        <img src={petImg} class="pet-image" />
-        <div className="pet-name-container">
-          <div>반려견 이름</div>
-          <div className="pet-name">뭉도리</div>
-        </div>
-        <div className="pet-info-container">
-          <div className="pet-info-item">
-            <div>품종</div>
-            <div className="pet-info">푸들</div>
-          </div>
-          <div className="pet-info-item">
-            <div>성별</div>
-            <div className="pet-info">수컷</div>
-          </div>
-          <div className="pet-info-item">
-            <div>몸무게</div>
-            <div className="pet-info">3kg</div>
-          </div>
-        </div>
+      <div className="pet-container">
+        <button className="btn" onClick={handlePrev}>
+          {"<"}
+        </button>
+
+        <PetInfo pet={pet} />
+
+        <button className="btn" onClick={handleNext}>
+          {">"}
+        </button>
+      </div>
+      <div className="page-dot">
+        {pets.map((_, i) => (
+          <span key={i} className={`dot ${i === index ? "active" : ""}`}></span>
+        ))}
       </div>
     </div>
   );

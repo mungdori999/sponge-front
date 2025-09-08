@@ -1,0 +1,65 @@
+/* 모달 오버레이 (배경) */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 모달 콘텐츠 */
+.ReactModal__Content {
+  width: 350px;
+  height: 250px;
+  border-radius: 16px;
+  padding: 20px;
+  margin: auto;
+  inset: unset !important; /* 중앙 정렬 */
+}
+
+/* 제목 */
+.login-modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.login-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin: 8px;
+}
+/* 입력창 */
+.login-modal-input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* 로그인 버튼 */
+.login-modal-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffb317;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login-modal-input:focus {
+  outline: none;
+  border: 1.5px solid #ffb317;
+}
+
+/* 닫기 버튼 */
+.login-modal-close {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: #9f9f9f;
+  cursor: pointer;
+}

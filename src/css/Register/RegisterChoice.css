@@ -1,0 +1,20 @@
+.RegisterChoice {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  width: 40%;
+  color: #545454;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.selected {
+  background-color: #ffb317;
+  color: white;
+}
+.RegisterChoice .register-img {
+  width: 100px;
+  height: 100px;
+  margin-top: 12px;
+}
