@@ -13,7 +13,7 @@
   border-radius: 16px;
   padding: 20px;
   margin: auto;
-  inset: unset !important; /* 중앙 정렬 */
+  inset: unset !important;
 }
 
 /* 제목 */

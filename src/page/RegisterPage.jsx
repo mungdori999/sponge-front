@@ -5,13 +5,17 @@ import "../css/Register/RegisterPage.css";
 import loginImg1 from "../assets/login1.png";
 import loginImg2 from "../assets/login2.png";
 import { useState } from "react";
+import OwnerRegister from "../component/Register/OwnerRegister";
 
 const RegisterPage = () => {
   const [selectedType, setSelectedType] = useState(null);
 
   const handleSelect = (type) => {
-    console.log(type);
     setSelectedType(type);
+  };
+
+  const handleClose = () => {
+    setSelectedType(null); // 모달 닫기 → 선택 해제
   };
 
   return (
@@ -32,6 +36,8 @@ const RegisterPage = () => {
           selected={selectedType === "TRAINER"}
         />
       </div>
+
+      <OwnerRegister isOpen={selectedType === "OWNER"} onClose={handleClose} />
     </div>
   );
 };
