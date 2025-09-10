@@ -27,3 +27,28 @@ export const handleNextStep =
     setError("");
     setStep(2);
   };
+
+export const registerOwner =
+  ({ nickname, gender, phoneNumber, setError, onSuccess }) =>
+  async (e) => {
+    e.preventDefault();
+
+    // --- 1. 입력값 검증 ---
+    if (!nickname || nickname.trim().length < 2) {
+      setError("닉네임은 최소 2글자 이상이어야 합니다.");
+      return;
+    }
+
+    if (!gender) {
+      setError("성별을 선택해주세요.");
+      return;
+    }
+
+    const phoneRegex = /^010\d{8}$/; // 010으로 시작하는 11자리 번호
+    if (!phoneRegex.test(phoneNumber)) {
+      setError("휴대폰 번호를 올바르게 입력해주세요. (예: 01012345678)");
+      return;
+    }
+
+    setError(""); // 에러 초기화
+  };

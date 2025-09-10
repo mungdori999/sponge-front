@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import "../../css/Register/OwnerRegister.css";
-import { handleNextStep } from "./registerNext";
+import { handleNextStep, registerOwner } from "./registerNext";
 
 Modal.setAppElement("#root");
 
@@ -11,18 +11,17 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [nickname, setNickname] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [gender, setGender] = useState("");
   const [error, setError] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    onClose();
-  };
 
   const handleClose = () => {
     setEmail("");
     setPassword("");
     setConfirmPassword("");
+    setNickname("");
+    setPhoneNumber("");
+    setGender("");
     setError("");
     setStep(1);
     onClose();
@@ -103,7 +102,7 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
       )}
 
       {step === 2 && (
-        <form className="owner-register-form" onSubmit={handleSubmit}>
+        <form className="owner-register-form" onSubmit={registerOwner}>
           <label htmlFor="nickname">닉네임</label>
           <input
             id="nickname"
@@ -113,8 +112,43 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
             placeholder="닉네임을 입력하세요"
             required
           />
-
-          <button type="submit" className="owner-register-submit">
+          <label>성별</label>
+          <div className="gender-select">
+            <button
+              type="button"
+              className={gender === "male" ? "active" : ""}
+              onClick={() => setGender("male")}
+            >
+              남성
+            </button>
+            <button
+              type="button"
+              className={gender === "female" ? "active" : ""}
+              onClick={() => setGender("female")}
+            >
+              여성
+            </button>
+          </div>
+          <label htmlFor="phone-number">전화번호</label>
+          <input
+            id="phone-number"
+            type="text"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            placeholder="전화번호를 입력하세요 (예: 01012345678)"
+            required
+          />
+          {error && <p className="owner-register-error">{error}</p>}
+          <button
+            type="submit"
+            className="owner-register-submit"
+            onClick={registerOwner({
+              nickname,
+              gender,
+              phoneNumber,
+              setError,
+            })}
+          >
             회원가입
           </button>
           <button

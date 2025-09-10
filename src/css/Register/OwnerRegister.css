@@ -1,7 +1,7 @@
 .owner-register-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
   width: 100%;
   max-width: 400px;
   margin: 30px auto;
@@ -56,4 +56,24 @@
   color: #e05353;
   font-size: 12px;
   margin: 4px 0;
+}
+.gender-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.gender-select button {
+  width: 45%;
+  border: 1px solid #ffb317;
+  color: #ffb317;
+  border-radius: 8px;
+  padding: 15px 0;
+  background: white;
+  cursor: pointer;
+}
+
+.gender-select button.active {
+  background: #ffb317; /* 파란색 */
+  color: white;
+  border-color: #ffb317;
 }
