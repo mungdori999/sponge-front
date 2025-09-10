@@ -6,6 +6,7 @@ const routerUrl = {
   postList: "/post",
   login: "/login",
   register: "/register",
+  registerComplete: "/register/complete",
   chat: "/chat",
   myPage: "/my_page",
   myPost: "/my_post",

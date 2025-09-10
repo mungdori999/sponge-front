@@ -1,3 +1,7 @@
+import axios from "../../api/axios";
+
+import routerUrl from "../../data/router-url";
+
 export const handleNextStep =
   ({ email, password, confirmPassword, setError, setStep }) =>
   (e) => {
@@ -19,6 +23,11 @@ export const handleNextStep =
       return;
     }
 
+    if (password.length < 8 || password.length >= 100) {
+      setError("비밀번호는 8자 이상 100자 미만이어야 합니다.");
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("비밀번호가 일치하지 않습니다.");
       return;
@@ -29,13 +38,17 @@ export const handleNextStep =
   };
 
 export const registerOwner =
-  ({ nickname, gender, phoneNumber, setError, onSuccess }) =>
+  ({ email, password, nickname, gender, phoneNumber, setError, onSuccess }) =>
   async (e) => {
     e.preventDefault();
 
     // --- 1. 입력값 검증 ---
-    if (!nickname || nickname.trim().length < 2) {
-      setError("닉네임은 최소 2글자 이상이어야 합니다.");
+    if (
+      !nickname ||
+      nickname.trim().length < 2 ||
+      nickname.trim().length >= 10
+    ) {
+      setError("닉네임은 2자 이상 10자 미만이어야 합니다.");
       return;
     }
 
@@ -50,5 +63,25 @@ export const registerOwner =
       return;
     }
 
-    setError(""); // 에러 초기화
+    setError("");
+
+    try {
+      const response = await axios.post("/api/owner", {
+        email,
+        password,
+        nickname,
+        gender,
+        phoneNumber,
+      });
+
+      console.log("회원가입 성공:", response.data);
+      onSuccess();
+    } catch (err) {
+      console.error(err);
+      if (err.response?.data?.message) {
+        setError(err.response.data.message);
+      } else {
+        setError("서버 요청 중 오류가 발생했습니다.");
+      }
+    }
   };

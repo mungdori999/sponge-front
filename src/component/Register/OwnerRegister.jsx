@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import "../../css/Register/OwnerRegister.css";
-import { handleNextStep, registerOwner } from "./registerNext";
+import { useNavigate } from "react-router-dom";
+import { handleNextStep, registerOwner } from "./register";
 
 Modal.setAppElement("#root");
 
@@ -25,6 +26,11 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
     setError("");
     setStep(1);
     onClose();
+  };
+  const navigate = useNavigate();
+  const onSuccess = () => {
+    onClose();
+    navigate("/register/complete");
   };
 
   return (
@@ -116,15 +122,15 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
           <div className="gender-select">
             <button
               type="button"
-              className={gender === "male" ? "active" : ""}
-              onClick={() => setGender("male")}
+              className={gender === "MALE" ? "active" : ""}
+              onClick={() => setGender("MALE")}
             >
               남성
             </button>
             <button
               type="button"
-              className={gender === "female" ? "active" : ""}
-              onClick={() => setGender("female")}
+              className={gender === "FEMALE" ? "active" : ""}
+              onClick={() => setGender("FEMALE")}
             >
               여성
             </button>
@@ -143,10 +149,13 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
             type="submit"
             className="owner-register-submit"
             onClick={registerOwner({
+              email,
+              password,
               nickname,
               gender,
               phoneNumber,
               setError,
+              onSuccess,
             })}
           >
             회원가입
