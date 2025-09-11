@@ -1,0 +1,25 @@
+.RegisterCompletePage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.RegisterCompletePage .success-text {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.RegisterCompletePage .login-button {
+  width: 60%;
+  background-color: #ffb317; /* 파랑 */
+  color: white;
+  font-weight: 600;
+  padding: 16px 16px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}

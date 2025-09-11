@@ -10,6 +10,7 @@ const LoginModal = ({ isOpen, onClose, loginType }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = async () => {
     try {
@@ -29,7 +30,7 @@ const LoginModal = ({ isOpen, onClose, loginType }) => {
       navigate("/");
     } catch (error) {
       console.error("❌ 로그인 실패:", error);
-      alert("로그인에 실패했습니다. 다시 시도해주세요.");
+      setError("로그인에 실패했습니다. 이메일과 비밀번호를 확인해주세요.");
     }
   };
 
@@ -55,6 +56,7 @@ const LoginModal = ({ isOpen, onClose, loginType }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        {error && <p className="login-error">{error}</p>}
         <button className="login-modal-button" onClick={handleLogin}>
           로그인
         </button>

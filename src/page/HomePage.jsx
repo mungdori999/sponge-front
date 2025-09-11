@@ -16,6 +16,7 @@ import { useCategorySelect } from "../component/hook/categorySelect";
 
 const HomePage = () => {
   const { activeTab, handleTabClick } = useContext(TabContext);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const nav = useNavigate();
 
   const { selectedIndex, handleCategorySelect } = useCategorySelect();

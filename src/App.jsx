@@ -14,6 +14,7 @@ export const TabContext = createContext();
 
 function App() {
   const [activeTab, setActiveTab] = useState(0);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const location = useLocation();
 

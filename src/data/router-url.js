@@ -1,5 +1,3 @@
-import { register } from "swiper/element";
-
 const routerUrl = {
   home: "/",
   post: "/post/:id",
