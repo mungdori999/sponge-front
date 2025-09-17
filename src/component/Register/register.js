@@ -1,6 +1,4 @@
-import axios from "../../api/axios";
-
-import routerUrl from "../../data/router-url";
+import api from "../../api/axios";
 
 export const handleNextStep =
   ({ email, password, confirmPassword, setError, setStep }) =>
@@ -66,7 +64,7 @@ export const registerOwner =
     setError("");
 
     try {
-      const response = await axios.post("/api/owner", {
+      const response = await api.post("/api/owner", {
         email,
         password,
         nickname,

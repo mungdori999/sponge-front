@@ -3,34 +3,51 @@ import Modal from "react-modal";
 import "../../css/Register/OwnerRegister.css";
 import { useNavigate } from "react-router-dom";
 import { handleNextStep, registerOwner } from "./register";
+import routerUrl from "../../data/router-url";
 
 Modal.setAppElement("#root");
 
 const OwnerRegisterModal = ({ isOpen, onClose }) => {
-  const [step, setStep] = useState(1); // 모달 단계 관리
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [nickname, setNickname] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [gender, setGender] = useState("");
+  const initialFormData = {
+    email: "",
+    password: "",
+    confirmPassword: "",
+    nickname: "",
+    phoneNumber: "",
+    gender: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [step, setStep] = useState(1);
   const [error, setError] = useState("");
 
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleGenderSelect = (gender) => {
+    setFormData((prev) => ({
+      ...prev,
+      gender,
+    }));
+  };
+
   const handleClose = () => {
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
-    setNickname("");
-    setPhoneNumber("");
-    setGender("");
+    setFormData(initialFormData);
     setError("");
     setStep(1);
     onClose();
   };
-  const navigate = useNavigate();
+
   const onSuccess = () => {
     onClose();
-    navigate("/register/complete");
+    navigate(routerUrl.registerComplete);
   };
 
   return (
@@ -55,9 +72,10 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
           <label htmlFor="email">이메일</label>
           <input
             id="email"
+            name="email"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={handleChange}
             placeholder="example@domain.com"
             required
           />
@@ -65,19 +83,21 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
           <label htmlFor="password">비밀번호</label>
           <input
             id="password"
+            name="password"
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formData.password}
+            onChange={handleChange}
             placeholder="비밀번호를 입력하세요"
             required
           />
 
-          <label htmlFor="confirm-password">비밀번호 확인</label>
+          <label htmlFor="confirmPassword">비밀번호 확인</label>
           <input
-            id="confirm-password"
+            id="confirmPassword"
+            name="confirmPassword"
             type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            value={formData.confirmPassword}
+            onChange={handleChange}
             placeholder="비밀번호를 다시 입력하세요"
             required
           />
@@ -88,9 +108,9 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
             type="button"
             className="owner-register-submit"
             onClick={handleNextStep({
-              email,
-              password,
-              confirmPassword,
+              email: formData.email,
+              password: formData.password,
+              confirmPassword: formData.confirmPassword,
               setError,
               setStep,
             })}
@@ -112,48 +132,50 @@ const OwnerRegisterModal = ({ isOpen, onClose }) => {
           <label htmlFor="nickname">닉네임</label>
           <input
             id="nickname"
+            name="nickname"
             type="text"
-            value={nickname}
-            onChange={(e) => setNickname(e.target.value)}
+            value={formData.nickname}
+            onChange={handleChange}
             placeholder="닉네임을 입력하세요"
             required
           />
+
           <label>성별</label>
           <div className="gender-select">
             <button
               type="button"
-              className={gender === "MALE" ? "active" : ""}
-              onClick={() => setGender("MALE")}
+              className={formData.gender === "MALE" ? "active" : ""}
+              onClick={() => handleGenderSelect("MALE")}
             >
               남성
             </button>
             <button
               type="button"
-              className={gender === "FEMALE" ? "active" : ""}
-              onClick={() => setGender("FEMALE")}
+              className={formData.gender === "FEMALE" ? "active" : ""}
+              onClick={() => handleGenderSelect("FEMALE")}
             >
               여성
             </button>
           </div>
-          <label htmlFor="phone-number">전화번호</label>
+
+          <label htmlFor="phoneNumber">전화번호</label>
           <input
-            id="phone-number"
+            id="phoneNumber"
+            name="phoneNumber"
             type="text"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            value={formData.phoneNumber}
+            onChange={handleChange}
             placeholder="전화번호를 입력하세요 (예: 01012345678)"
             required
           />
+
           {error && <p className="owner-register-error">{error}</p>}
+
           <button
             type="submit"
             className="owner-register-submit"
             onClick={registerOwner({
-              email,
-              password,
-              nickname,
-              gender,
-              phoneNumber,
+              ...formData,
               setError,
               onSuccess,
             })}

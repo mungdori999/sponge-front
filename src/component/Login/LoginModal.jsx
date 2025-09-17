@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import "../../css/Login/LoginModal.css";
-import axios from "../../api/axios";
+import api from "../../api/axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const LoginModal = ({ isOpen, onClose, loginType }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("/api/login", {
+      const response = await api.post("/api/login", {
         email,
         password,
         loginType,

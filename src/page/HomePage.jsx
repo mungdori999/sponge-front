@@ -9,17 +9,22 @@ import PostBanner from "../component/Home/PostBanner";
 import Bottom from "../component/Bottom/Bottom";
 import ReadMore from "../component/common/ReadMore";
 import { TabContext } from "../App";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import routerUrl from "../data/router-url";
 import { useCategorySelect } from "../component/hook/categorySelect";
 
 const HomePage = () => {
-  const { activeTab, handleTabClick } = useContext(TabContext);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { handleTabClick } = useContext(TabContext);
   const nav = useNavigate();
 
   const { selectedIndex, handleCategorySelect } = useCategorySelect();
+  const [accessToken, setAccessToken] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    setAccessToken(token);
+  }, []);
 
   return (
     <div>
