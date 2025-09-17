@@ -9,32 +9,33 @@ import PostBanner from "../component/Home/PostBanner";
 import Bottom from "../component/Bottom/Bottom";
 import ReadMore from "../component/common/ReadMore";
 import { TabContext } from "../App";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import routerUrl from "../data/router-url";
-import { useCategorySelect } from "../component/hook/categorySelect";
+import { useCategorySelect } from "../component/hook/useCategorySelect";
+import Profile from "../component/Header/Profile";
+import useAuth from "../component/hook/useAuth";
 
 const HomePage = () => {
   const { handleTabClick } = useContext(TabContext);
   const nav = useNavigate();
 
   const { selectedIndex, handleCategorySelect } = useCategorySelect();
-  const [accessToken, setAccessToken] = useState(null);
-
-  useEffect(() => {
-    const token = localStorage.getItem("accessToken");
-    setAccessToken(token);
-  }, []);
+  const { accessToken, loginType, nickname } = useAuth();
 
   return (
     <div>
       <Header
         leftchild={<Brand />}
         rightchild={
-          <LoginButton
-            text={"로그인/가입"}
-            onClick={() => nav(routerUrl.login)}
-          />
+          accessToken ? (
+            <Profile nickname={nickname} loginType={loginType} />
+          ) : (
+            <LoginButton
+              text={"로그인/가입"}
+              onClick={() => nav(routerUrl.login)}
+            />
+          )
         }
       />
       <Search />

@@ -6,7 +6,7 @@ import PostListBanner from "../component/PostList/PostListBanner";
 import PostCategory from "../component/common/PostCategory";
 import PostList from "../component/common/PostList";
 import routerUrl from "../data/router-url";
-import { useCategorySelect } from "../component/hook/categorySelect";
+import { useCategorySelect } from "../component/hook/useCategorySelect";
 
 const PostListPage = () => {
   const nav = useNavigate();
