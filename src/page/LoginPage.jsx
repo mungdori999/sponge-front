@@ -9,6 +9,7 @@ import loginImg1 from "../assets/login1.png";
 import loginImg2 from "../assets/login2.png";
 import LoginModal from "../component/Login/LoginModal";
 import { useNavigate } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 
 Modal.setAppElement("#root"); // 접근성 설정
 
@@ -29,7 +30,17 @@ const LoginPage = () => {
 
   return (
     <div className="LoginPage">
-      <Header leftchild={<BackButton />} />
+      <Header
+        leftchild={<BackButton />}
+        rightchild={
+          <FaHome
+            className="home-icon"
+            onClick={(e) => {
+              navigate("/");
+            }}
+          />
+        }
+      />
       <LoginBanner />
       <div className="LoginBox-wrapper">
         <LoginBox
