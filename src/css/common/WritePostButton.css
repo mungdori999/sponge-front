@@ -1,0 +1,24 @@
+.write-button {
+  position: fixed; /* 브라우저 기준 */
+  bottom: 80px;
+  right: calc(50% - 300px);
+  /* 50%는 화면 중앙, -300px은 root 반너비(600px/2), +20px은 root 안쪽 여백 */
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #ffbb30;
+  color: white;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.write-button:hover {
+  background-color: #e0a628;
+}

@@ -15,6 +15,7 @@ import routerUrl from "../data/router-url";
 import { useCategorySelect } from "../component/hook/useCategorySelect";
 import Profile from "../component/Header/Profile";
 import useAuth from "../component/hook/useAuth";
+import PostWriteButton from "../component/common/WritePostButton";
 
 const HomePage = () => {
   const { handleTabClick } = useContext(TabContext);
@@ -52,6 +53,7 @@ const HomePage = () => {
           handleTabClick(1);
         }}
       />
+      <PostWriteButton />
       <Bottom />
     </div>
   );
