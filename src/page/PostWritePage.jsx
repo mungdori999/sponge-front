@@ -3,6 +3,7 @@ import BackButton from "../component/common/BackButton";
 import Header from "../component/Header/Header";
 import PostStep from "../component/Post/PostStep";
 import PostText from "../component/Post/PostText";
+import PostSelectPet from "../component/Post/PostSelectPet";
 
 const PostWritePage = () => {
   const [step, setStep] = useState(1);
@@ -27,6 +28,9 @@ const PostWritePage = () => {
       <Header leftchild={<BackButton />} />
       <PostStep step={step} />
       <PostText text1={stepTexts[step].text1} text2={stepTexts[step].text2} />
+      {step === 1 && <PostSelectPet />}
+      {step === 2 && <div>2</div>}
+      {step === 3 && <div>3</div>}
     </div>
   );
 };
