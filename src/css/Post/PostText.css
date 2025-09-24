@@ -1,0 +1,11 @@
+.PostText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.PostText div {
+  font-size: 18px;
+  font-weight: bold;
+}

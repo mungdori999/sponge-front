@@ -10,6 +10,7 @@ const WritePostButton = () => {
   const { accessToken } = useAuth();
   const writeButtonClick = () => {
     if (accessToken) {
+      nav(routerUrl.postWrite);
     } else {
       Swal.fire({
         icon: "warning",
