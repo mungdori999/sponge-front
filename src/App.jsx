@@ -10,6 +10,7 @@ import MyPage from "./page/MyPage.jsx";
 import { useEffect } from "react";
 import RegisterPage from "./page/RegisterPage.jsx";
 import RegisterCompletePage from "./page/RegisterCompletePage.jsx";
+import PostWritePage from "./page/PostWritePage.jsx";
 export const TabContext = createContext();
 
 function App() {
@@ -71,6 +72,7 @@ function App() {
           <Route path={routerUrl.home} element={<HomePage />} />
           <Route path={routerUrl.postList} element={<PostListPage />} />
           <Route path={routerUrl.post} element={<PostPage />} />
+          <Route path={routerUrl.postWrite} element={<PostWritePage />} />
           <Route path={routerUrl.login} element={<LoginPage />} />
           <Route path={routerUrl.register} element={<RegisterPage />} />
           <Route
