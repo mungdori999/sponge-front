@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BackButton from "../component/common/BackButton";
 import Header from "../component/Header/Header";
 import PostStep from "../component/Post/PostStep";
 import PostText from "../component/Post/PostText";
 import PostSelectPet from "../component/Post/PostSelectPet";
+import api from "../api/axios";
+import requestUrl from "../api/request-url";
 
 const PostWritePage = () => {
   const [step, setStep] = useState(1);
+  const [pets, setPets] = useState([]);
+
+  useEffect(() => {
+    api.get(requestUrl.pet).then((res) => {
+      setPets(res.data);
+    });
+  }, []);
 
   const stepTexts = {
     1: {
@@ -28,7 +37,7 @@ const PostWritePage = () => {
       <Header leftchild={<BackButton />} />
       <PostStep step={step} />
       <PostText text1={stepTexts[step].text1} text2={stepTexts[step].text2} />
-      {step === 1 && <PostSelectPet />}
+      {step === 1 && <PostSelectPet petList={pets} />}
       {step === 2 && <div>2</div>}
       {step === 3 && <div>3</div>}
     </div>

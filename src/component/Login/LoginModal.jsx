@@ -3,6 +3,7 @@ import "../../css/Login/LoginModal.css";
 import api from "../../api/axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import requestUrl from "../../api/request-url";
 
 Modal.setAppElement("#root"); // 접근성 설정
 
@@ -14,7 +15,7 @@ const LoginModal = ({ isOpen, onClose, loginType }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await api.post("/api/login", {
+      const response = await api.post(requestUrl.login, {
         email,
         password,
         loginType,

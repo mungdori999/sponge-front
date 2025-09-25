@@ -1,0 +1,11 @@
+.PetText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.PetText div {
+  font-size: 18px;
+  font-weight: bold;
+}

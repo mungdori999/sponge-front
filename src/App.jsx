@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import RegisterPage from "./page/RegisterPage.jsx";
 import RegisterCompletePage from "./page/RegisterCompletePage.jsx";
 import PostWritePage from "./page/PostWritePage.jsx";
+import AddPetPage from "./page/AddPetPage.jsx";
 export const TabContext = createContext();
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
             element={<RegisterCompletePage />}
           />
           <Route path={routerUrl.myPage} element={<MyPage />} />
+          <Route path={routerUrl.addPet} element={<AddPetPage />} />
         </Routes>
       </TabContext.Provider>
     </div>

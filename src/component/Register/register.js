@@ -1,4 +1,5 @@
 import api from "../../api/axios";
+import requestUrl from "../../api/request-url";
 
 export const handleNextStep =
   ({ email, password, confirmPassword, setError, setStep }) =>
@@ -64,7 +65,7 @@ export const registerOwner =
     setError("");
 
     try {
-      const response = await api.post("/api/owner", {
+      const response = await api.post(requestUrl.owner, {
         email,
         password,
         nickname,

@@ -9,5 +9,6 @@ const routerUrl = {
   chat: "/chat",
   myPage: "/my_page",
   myPost: "/my_post",
+  addPet: "/add_pet",
 };
 export default routerUrl;
