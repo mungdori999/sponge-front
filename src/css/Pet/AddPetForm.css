@@ -1,0 +1,36 @@
+.AddPetForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.AddPetForm div {
+  display: flex;
+  flex-direction: column;
+  color: #9f9f9f9f;
+  font-size: 16px;
+  font-weight: bold;
+}
+.AddPetForm input {
+  margin-top: 8px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  color: black;
+  font-size: 14px;
+  width: 60%;
+}
+.AddPetForm input::placeholder {
+  color: #9f9f9f;
+  font-size: 14px; /* 크기도 조정 가능 */
+}
+.AddPetForm input:focus {
+  outline: none;
+  border-bottom: 2px solid #ffb317;
+}
+
+.AddPetForm .required {
+  color: #e05353;
+  margin-left: 4px;
+}
