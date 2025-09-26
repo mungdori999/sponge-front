@@ -67,10 +67,9 @@
   color: #9f9f9f;
   border-radius: 15px;
   font-weight: bold;
-  cursor: not-allowed;
 }
 
-.AddPetForm .possible {
+.AddPetForm .active {
   background-color: #ffb317;
 
   color: white;

@@ -1,0 +1,29 @@
+.AddPetImage {
+  display: inline-block;
+  margin-top: 100px;
+  position: relative;
+}
+
+.AddPetImage .add-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.AddPetImage .plus-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+  background-color: #ffbb30;
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

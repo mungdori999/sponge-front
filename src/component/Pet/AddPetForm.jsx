@@ -1,6 +1,15 @@
 import "../../css/Pet/AddPetForm.css";
 
 const AddPetForm = ({ petData, onChange, onNext }) => {
+  const isValid = () => {
+    return (
+      petData.name?.trim() &&
+      petData.age >= 0 &&
+      petData.weight > 0 &&
+      petData.breed?.trim() &&
+      petData.gender
+    );
+  };
   return (
     <div className="AddPetForm">
       <div className="name">
@@ -78,7 +87,12 @@ const AddPetForm = ({ petData, onChange, onNext }) => {
         </div>
       </div>
 
-      <button type="button" className="form-next-button" onClick={onNext}>
+      <button
+        type="button"
+        className={`form-next-button ${isValid() ? "active" : ""}`}
+        onClick={onNext}
+        disabled={!isValid()}
+      >
         다음
       </button>
     </div>

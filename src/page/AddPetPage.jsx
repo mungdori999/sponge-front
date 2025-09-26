@@ -5,9 +5,10 @@ import AddPetProg from "../component/Pet/AddPetProg";
 import PetText from "../component/Pet/PetText";
 import "../css/Pet/AddPetPage.css";
 import AddPetForm from "../component/Pet/AddPetForm";
+import AddPetImage from "../component/Pet/AddPetImage";
 
 const AddPetPage = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const [petData, setPetData] = useState({
     name: "",
     age: 0,
@@ -21,18 +22,17 @@ const AddPetPage = () => {
   };
 
   const handleNext = () => {
-    console.log("저장할 데이터:", petData);
-    // axios 요청 or 다음 step 이동
+    setStep((prev) => prev + 50);
   };
 
   const stepTexts = {
-    1: {
+    0: {
       text1: "반려견 등록을 위해",
       text2: "기본 정보를 입력해주세요",
     },
-    2: {
-      text1: "증상 및 소견 작성",
-      text2: "환자의 상태를 자세히 입력해주세요.",
+    50: {
+      text1: "반려견 대표사진을",
+      text2: "등록해주세요!",
     },
   };
   return (
@@ -41,13 +41,17 @@ const AddPetPage = () => {
         leftchild={<BackButton />}
         title={<div className="title">프로필</div>}
       />
-      <AddPetProg progress={0} />
+      <AddPetProg progress={step} />
       <PetText text1={stepTexts[step].text1} text2={stepTexts[step].text2} />
-      <AddPetForm
-        petData={petData}
-        onChange={handleChange}
-        onNext={handleNext}
-      />
+      {step === 0 && (
+        <AddPetForm
+          petData={petData}
+          onChange={handleChange}
+          onNext={handleNext}
+        />
+      )}
+
+      {step === 50 && <AddPetImage />}
     </div>
   );
 };
