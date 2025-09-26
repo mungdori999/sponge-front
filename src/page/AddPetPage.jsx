@@ -8,6 +8,23 @@ import AddPetForm from "../component/Pet/AddPetForm";
 
 const AddPetPage = () => {
   const [step, setStep] = useState(1);
+  const [petData, setPetData] = useState({
+    name: "",
+    age: 0,
+    weight: 0,
+    breed: "",
+    gender: "MALE",
+  });
+
+  const handleChange = (field, value) => {
+    setPetData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleNext = () => {
+    console.log("저장할 데이터:", petData);
+    // axios 요청 or 다음 step 이동
+  };
+
   const stepTexts = {
     1: {
       text1: "반려견 등록을 위해",
@@ -26,7 +43,11 @@ const AddPetPage = () => {
       />
       <AddPetProg progress={0} />
       <PetText text1={stepTexts[step].text1} text2={stepTexts[step].text2} />
-      <AddPetForm />
+      <AddPetForm
+        petData={petData}
+        onChange={handleChange}
+        onNext={handleNext}
+      />
     </div>
   );
 };
