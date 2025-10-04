@@ -15,14 +15,19 @@ const AddPetPage = () => {
     weight: 0,
     breed: "",
     gender: "MALE",
+    petImgUrl: null,
   });
 
-  const handleChange = (field, value) => {
+  const petDataChange = (field, value) => {
     setPetData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleNext = () => {
+  const stepNext = () => {
     setStep((prev) => prev + 50);
+  };
+
+  const stepBack = () => {
+    setStep((prev) => prev - 50);
   };
 
   const stepTexts = {
@@ -46,12 +51,12 @@ const AddPetPage = () => {
       {step === 0 && (
         <AddPetForm
           petData={petData}
-          onChange={handleChange}
-          onNext={handleNext}
+          onChange={petDataChange}
+          onNext={stepNext}
         />
       )}
 
-      {step === 50 && <AddPetImage />}
+      {step === 50 && <AddPetImage stepBack={stepBack} pet={petData} />}
     </div>
   );
 };
