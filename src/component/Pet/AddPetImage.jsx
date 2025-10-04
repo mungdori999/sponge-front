@@ -4,9 +4,12 @@ import petImg from "../../assets/basic_pet.png";
 import { useState } from "react";
 import api from "../../api/axios";
 import requestUrl from "../../api/request-url";
+import { useNavigate } from "react-router-dom";
+import routerUrl from "../../data/router-url";
 
 const AddPetImage = ({ stepBack, pet }) => {
   const [image, setImage] = useState(null);
+  const nav = useNavigate();
 
   // 파일 선택 핸들러
   const handleImageChange = (e) => {
@@ -27,8 +30,7 @@ const AddPetImage = ({ stepBack, pet }) => {
         },
       })
       .then((response) => {
-        console.log("Pet saved successfully:", response.data);
-        // 추가적인 성공 처리 로직
+        nav(routerUrl.myPage);
       })
       .catch((error) => {
         console.error("Error saving pet:", error);

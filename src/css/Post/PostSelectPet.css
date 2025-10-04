@@ -1,4 +1,4 @@
-.PostSelectPet {
+.PostEmptyPet {
   border: 2px dashed #eeeeee; /* 점선 테두리 */
   border-radius: 8px; /* 모서리 둥글게 (선택사항) */
   padding: 20px;
@@ -7,7 +7,7 @@
   max-width: 400px;
   cursor: pointer;
 }
-.PostSelectPet .plus-button {
+.PostEmptyPet .plus-button {
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -18,14 +18,53 @@
   margin-bottom: 15px;
 }
 
-.PostSelectPet div {
+.PostEmptyPet div {
   font-size: 14px;
   color: #9f9f9f;
   margin-bottom: 15px;
 }
 
-.PostSelectPet .plus-text {
+.PostEmptyPet .plus-text {
   font-size: 18px;
   color: black;
   margin-bottom: 10px;
+}
+
+.PostSelectPet {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 카드 사이 간격 */
+}
+
+.PostSelectPet .pet-card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px; /* 이미지와 이름 사이 간격 */
+  padding: 10px;
+  border: none;
+  margin: 40px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 500px;
+}
+
+.PostSelectPet .pet-card .pet-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.PostSelectPet .pet-card .pet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
+  color: #9f9f9f;
+  font-weight: bold;
+}
+
+.PostSelectPet .pet-card .pet-name {
+  color: black;
 }
