@@ -40,14 +40,16 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  justify-content: space-between;
   gap: 15px; /* 이미지와 이름 사이 간격 */
   padding: 10px;
   border: none;
-  margin: 40px auto;
+  margin: 20px auto;
   background-color: #f9f9f9;
   border-radius: 8px;
   cursor: pointer;
   width: 500px;
+  padding: 10px 20px;
 }
 
 .PostSelectPet .pet-card .pet-image {
@@ -56,9 +58,16 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
+.PostSelectPet .pet-details {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
 .PostSelectPet .pet-card .pet-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
   font-size: 16px;
   color: #9f9f9f;
@@ -67,4 +76,60 @@
 
 .PostSelectPet .pet-card .pet-name {
   color: black;
+}
+
+.PostSelectPet .pet-card.selected {
+  background-color: #ffedc9; /* 선택됐을 때 연한 초록 */
+}
+
+.PostSelectPet .pet-check {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.PostSelectPet .pet-check input {
+  display: none;
+}
+
+.PostSelectPet .pet-check span {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%; /* 원형 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  transition: all 0.2s ease;
+  background-color: #eeeeee;
+}
+
+/* 체크된 상태 */
+.PostSelectPet .pet-check input:checked + span {
+  background-color: #ffb317;
+}
+
+.PostSelectPet .pet-check span::before {
+  content: "✓";
+  color: white;
+}
+
+.PostSelectPet .next-button {
+  margin-top: 40px;
+  width: 100%;
+  padding: 12px;
+  background-color: #eeeeee;
+  border: none;
+  color: #9f9f9f;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.PostSelectPet .active {
+  background-color: #ffb317;
+
+  color: white;
+  cursor: pointer;
 }

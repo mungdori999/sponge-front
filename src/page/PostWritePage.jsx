@@ -10,6 +10,7 @@ import requestUrl from "../api/request-url";
 const PostWritePage = () => {
   const [step, setStep] = useState(1);
   const [pets, setPets] = useState([]);
+  const [selectedPetId, setSelectedPetId] = useState(null);
 
   useEffect(() => {
     api.get(requestUrl.pet).then((res) => {
@@ -37,7 +38,14 @@ const PostWritePage = () => {
       <Header leftchild={<BackButton />} />
       <PostStep step={step} />
       <PostText text1={stepTexts[step].text1} text2={stepTexts[step].text2} />
-      {step === 1 && <PostSelectPet petList={pets} />}
+      {step === 1 && (
+        <PostSelectPet
+          petList={pets}
+          selectedPetId={selectedPetId}
+          setSelectedPetId={setSelectedPetId}
+          setStep={setStep}
+        />
+      )}
       {step === 2 && <div>2</div>}
       {step === 3 && <div>3</div>}
     </div>
