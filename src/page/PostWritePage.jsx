@@ -6,6 +6,7 @@ import PostText from "../component/Post/PostText";
 import PostSelectPet from "../component/Post/PostSelectPet";
 import api from "../api/axios";
 import requestUrl from "../api/request-url";
+import PostSelectCategory from "../component/Post/PostSelectCategory";
 
 const PostWritePage = () => {
   const [step, setStep] = useState(1);
@@ -24,8 +25,8 @@ const PostWritePage = () => {
       text2: "강아지를 선택해주세요",
     },
     2: {
-      text1: "증상 및 소견 작성",
-      text2: "환자의 상태를 자세히 입력해주세요.",
+      text1: "문제행동에 해당되는",
+      text2: "내용을 선택해주세요",
     },
     3: {
       text1: "최종 확인",
@@ -46,7 +47,7 @@ const PostWritePage = () => {
           setStep={setStep}
         />
       )}
-      {step === 2 && <div>2</div>}
+      {step === 2 && <PostSelectCategory />}
       {step === 3 && <div>3</div>}
     </div>
   );

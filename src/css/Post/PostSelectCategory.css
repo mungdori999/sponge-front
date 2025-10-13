@@ -1,0 +1,20 @@
+.PostSelectCategory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 12px; /* 아이템 간 간격 */
+  justify-content: center; /* 전체 그리드를 가운데 정렬 */
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.PostSelectCategory .category-item {
+  background-color: #eeeeee;
+  padding: 10px 50px;
+  width: 100px;
+  border-radius: 10px;
+  text-align: center;
+  color: #9f9f9f;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
