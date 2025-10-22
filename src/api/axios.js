@@ -36,7 +36,6 @@ api.interceptors.response.use(
       }
 
       try {
-        // 새 토큰 요청
         const res = await axios.post(
           `${
             import.meta.env.VITE_BACKEND_API_BASE_URL || "http://localhost:8080"
@@ -56,9 +55,11 @@ api.interceptors.response.use(
         return api(originalRequest);
       } catch (refreshError) {
         console.error("토큰 재발급 실패:", refreshError);
+
         localStorage.removeItem("accessToken");
         localStorage.removeItem("refreshToken");
-        window.location.href = requestUrl.login; // 다시 로그인 유도
+
+        window.location.href = routerUrl.login; // 다시 로그인 유도
         return Promise.reject(refreshError);
       }
     }

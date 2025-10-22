@@ -18,3 +18,8 @@
   cursor: pointer;
   margin-bottom: 10px;
 }
+
+.PostSelectCategory .selected {
+  background-color: #ffbb30;
+  color: #ffffff;
+}

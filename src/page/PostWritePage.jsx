@@ -12,6 +12,7 @@ const PostWritePage = () => {
   const [step, setStep] = useState(1);
   const [pets, setPets] = useState([]);
   const [selectedPetId, setSelectedPetId] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState([]);
 
   useEffect(() => {
     api.get(requestUrl.pet).then((res) => {
@@ -47,7 +48,12 @@ const PostWritePage = () => {
           setStep={setStep}
         />
       )}
-      {step === 2 && <PostSelectCategory />}
+      {step === 2 && (
+        <PostSelectCategory
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+      )}
       {step === 3 && <div>3</div>}
     </div>
   );
