@@ -1,4 +1,4 @@
-.PostSelectCategory {
+.PostSelectCategory .category-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(120px, 1fr));
   gap: 12px; /* 아이템 간 간격 */
@@ -7,7 +7,7 @@
   margin-top: 50px;
 }
 
-.PostSelectCategory .category-item {
+.PostSelectCategory .category-list .category-item {
   background-color: #eeeeee;
   padding: 10px 50px;
   width: 100px;
@@ -19,7 +19,30 @@
   margin-bottom: 10px;
 }
 
-.PostSelectCategory .selected {
+.PostSelectCategory .category-list .selected {
   background-color: #ffbb30;
   color: #ffffff;
+}
+
+.PostSelectCategory .button-group {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  gap: 30px;
+}
+.PostSelectCategory .button-group button {
+  width: 100%;
+  padding: 12px;
+  background-color: #eeeeee;
+  border: none;
+  color: #9f9f9f;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.PostSelectCategory .button-group .active {
+  background-color: #ffb317;
+  color: white;
+  cursor: pointer;
 }

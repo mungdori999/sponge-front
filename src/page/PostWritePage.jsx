@@ -52,6 +52,7 @@ const PostWritePage = () => {
         <PostSelectCategory
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
+          setStep={setStep}
         />
       )}
       {step === 3 && <div>3</div>}

@@ -15,8 +15,8 @@ const PostSelectCategory = ({
   };
 
   return (
-    <div>
-      <div className="PostSelectCategory">
+    <div className="PostSelectCategory">
+      <div className="category-list">
         {postCategory.slice(1).map((category, index) => (
           <div
             key={index}
