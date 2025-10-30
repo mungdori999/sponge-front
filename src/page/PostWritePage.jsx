@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BackButton from "../component/common/BackButton";
+import XButton from "../component/common/XButton";
 import Header from "../component/Header/Header";
 import PostStep from "../component/Post/PostStep";
 import PostText from "../component/Post/PostText";
@@ -7,6 +7,7 @@ import PostSelectPet from "../component/Post/PostSelectPet";
 import api from "../api/axios";
 import requestUrl from "../api/request-url";
 import PostSelectCategory from "../component/Post/PostSelectCategory";
+import PostWrite from "../component/Post/PostWrite";
 
 const PostWritePage = () => {
   const [step, setStep] = useState(1);
@@ -30,14 +31,14 @@ const PostWritePage = () => {
       text2: "내용을 선택해주세요",
     },
     3: {
-      text1: "최종 확인",
-      text2: "입력한 내용을 확인해주세요.",
+      text1: "문제행동에 해당되는",
+      text2: "내용을 입력해주세요.",
     },
   };
 
   return (
     <div className="PostWritePage">
-      <Header leftchild={<BackButton />} />
+      <Header leftchild={<XButton />} />
       <PostStep step={step} />
       <PostText text1={stepTexts[step].text1} text2={stepTexts[step].text2} />
       {step === 1 && (
@@ -55,7 +56,7 @@ const PostWritePage = () => {
           setStep={setStep}
         />
       )}
-      {step === 3 && <div>3</div>}
+      {step === 3 && <PostWrite />}
     </div>
   );
 };
