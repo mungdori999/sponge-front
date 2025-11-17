@@ -1,0 +1,88 @@
+.PostWrite .post-write-item {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.PostWrite .post-write-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.PostWrite .post-write-item .required {
+  color: #e05353;
+  margin-left: 4px;
+}
+
+.PostWrite .post-write-item .choice {
+  color: #9f9f9f9f;
+  margin-left: 4px;
+}
+
+.PostWrite .post-write-item label {
+  font-weight: bold;
+  color: #545454;
+  margin-bottom: 5px;
+}
+
+.PostWrite .post-write-item input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  color: black;
+  font-size: 14px;
+  width: 50%;
+}
+.PostWrite .post-write-item input::placeholder {
+  color: #9f9f9f;
+  font-size: 14px;
+}
+.PostWrite .post-write-item input:focus {
+  outline: none;
+  border-bottom: 2px solid #ffb317;
+}
+
+.PostWrite .post-write-item textarea {
+  width: 400px;
+  height: 350px;
+  background-color: #eeeeee;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  resize: none;
+}
+
+.PostWrite .post-write-item textarea:focus {
+  outline: none;
+}
+
+.PostWrite .post-write-item textarea::placeholder {
+  color: #9f9f9f;
+  font-size: 14px;
+}
+
+.PostWrite .post-write-item .file-input {
+  height: 150px;
+  border: 2px dashed #9f9f9f;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.PostWrite .post-write-item .file-input:hover {
+  background-color: #f0f0f0;
+}
+.PostWrite .post-write-item .camera-icon {
+  font-size: 48px;
+  color: #eeeeee;
+}
+
+.PostWrite .post-write-item .file-input .file-text {
+  margin-top: 10px;
+  color: #9f9f9f;
+  font-size: 14px;
+}
